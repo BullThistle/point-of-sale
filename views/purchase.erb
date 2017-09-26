@@ -1,0 +1,19 @@
+<h1>Check items to buy</h1>
+<form action="/purchase" method="post">
+  <% @items.each do |item| %>
+    <%= item.name %> $<%= item.price %>
+    <br>
+    <% id = item.id %>
+    <button type="submit" name="item" value="<%= item.id %>">Add to cart</button>
+    <br>
+  <% end %>
+</form>
+<br>
+<br>
+<br>
+<form action="/recipt" method="post">
+  <button class="btn-primary btn-large" type="submit">Submit</button>
+</form>
+<h3>Cart</h3>
+
+<a href="/">Go back</a>

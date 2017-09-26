@@ -1,2 +1,2 @@
-class Purchase
+class Purchase < ActiveRecord::Base
 end

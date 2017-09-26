@@ -1,0 +1,24 @@
+<p><%= @item.name %></p>
+<p>$<%= @item.price %></p>
+<p><%= @item.description %></p>
+<a href="/">Go back</a>
+
+<form action="/item/<%= @item.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit" name="button">Delete</button>
+</form>
+
+
+<h3>Edit item</h3>
+<form action="/item/<%= @item.id %>" method="post">
+  <label for="name">Item name &nbsp;</label>
+  <input type="text" name="name">
+  <br>
+  <label for="price">Price    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+  <input type="text" name="price">
+  <br>
+  <label for="price">Description</label>
+  <input type="text" name="description">
+  <br>
+  <button type="submit">Submit</button>
+</form>

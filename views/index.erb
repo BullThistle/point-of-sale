@@ -1,0 +1,31 @@
+<h1>Store</h1>
+<% if @items.any? %>
+  <p>Here are the items that are for sale</p>
+  <% @items.each do |item| %>
+    <ul>
+      <li><a href="/item/<%= item.id %>"><%= item.name %> $<%= item.price %></a></li>
+    </ul>
+  <% end %>
+<% else %>
+  <p>We have nothing for sale</p>
+<% end %>
+
+<h3>Add items to sell</h3>
+<form action="/" method="post">
+  <label for="name">Item name &nbsp;</label>
+  <input type="text" name="name">
+  <br>
+  <label for="price">Price    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+  <input type="text" name="price">
+  <br>
+  <label for="price">Description</label>
+  <input type="text" name="description">
+  <br>
+  <button type="submit">Add</button>
+</form>
+<br>
+<br>
+<br>
+<br>
+
+<a href="/purchase">Purchase Page</a>
